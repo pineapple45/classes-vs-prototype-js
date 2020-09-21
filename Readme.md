@@ -35,7 +35,7 @@
    }
 ```
 
-### Calling Objects representation
+### Calling Objects of the classes
 
 ```javascript
     const base = new Base('val1','val2');
@@ -109,7 +109,7 @@
 
 ```
 
-### Calling Objects representation
+### Calling Objects of the classes
 
 ```javascript
     const inherited = new Base('val1','val2');
