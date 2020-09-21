@@ -3,17 +3,17 @@
 ### Classes Representation 
 
 ```javascript
-    class Base{
-        constructor(arg1,arg2){
+    class Base {
+        constructor(arg1,arg2) {
             this.arg1 = arg1;
             this.arg2 = arg2;
         }
 
-        function1(){
+        function1() {
             ...
         }
 
-        function2(){
+        function2() {
             ...
         }
     }
@@ -21,16 +21,16 @@
 ### Prototype Representation
 
 ```javascript
-   function Base(arg1,arg2){
+   function Base(arg1,arg2) {
         this.arg1 = arg1;
         this.arg2 = arg2;
    }
    
-   Base.prototype.function1(){
+   Base.prototype.function1() {
        ...
    }
 
-   Base.prototype.function2(){
+   Base.prototype.function2() {
        ...
    }
 ```
@@ -43,40 +43,40 @@
     base.function2(); // calling function2
 ```
 
-### Classes Representation 
+### Inheritance in Classes
 
 ```javascript
-    class Inherited{
-        constructor(arg1,arg2){
+    class Inherited {
+        constructor(arg1,arg2) {
             this.arg1 = arg1;
             this.arg2 = arg2;
         }
 
-        function1(){
+        function1() {
             ...
         }
 
-        function2(){
+        function2() {
             ...
         }
     }
 
-    class Base extends Inherited{
-        constructor(arg1,arg2,arg3){
+    class Base extends Inherited {
+        constructor(arg1,arg2,arg3) {
             super(arg1,arg2);
             this.arg3 = arg3;
         }
 
-        function3(){
+        function3() {
             ...
         }
     }
 ```
 
-### Prototype Representation 
+### Inheritance using prototype 
 
 ```javascript
-    function Inherited(arg1,arg2){
+    function Inherited(arg1,arg2) {
         this.arg1 = arg1;
         this.arg2 = arg2;
     }
@@ -86,7 +86,7 @@
     //     this.arg3 = "some argument";
     // }
 
-    function Base(arg1,arg2,arg3){
+    function Base(arg1,arg2,arg3) {
         Inherited.apply(this,args1,arg2);
         this.arg3 = arg3;
 
@@ -95,15 +95,15 @@
         // }
     }
 
-    Inherited.prototype.function1(){
+    Inherited.prototype.function1() {
         ...
     }
 
-    Inherited.prototype.function2(){
+    Inherited.prototype.function2() {
         ...
     }
 
-    Base.prototype.function3(){
+    Base.prototype.function3() {
         ...
     }
 
@@ -120,18 +120,18 @@
 ```
 ### Method Chaining
 ```javascript
-    class Base{
-        constructor(arg1,arg2){
+    class Base {
+        constructor(arg1,arg2) {
             this.arg1 = arg1;
             this.arg2 = arg2;
         }
 
-        function1(){
+        function1() {
             ...
             return this;
         }
 
-        function2(){
+        function2() {
             ...
             return this;
         }
