@@ -1,6 +1,6 @@
 # Javascript Classes vs Prototype
 
-### Classes Representation 
+### Classes Representation
 
 ```javascript
     class Base {
@@ -18,6 +18,7 @@
         }
     }
 ```
+
 ### Prototype Representation
 
 ```javascript
@@ -25,7 +26,7 @@
         this.arg1 = arg1;
         this.arg2 = arg2;
    }
-   
+
    Base.prototype.function1() {
        ...
    }
@@ -38,9 +39,9 @@
 ### Calling Objects of the classes
 
 ```javascript
-    const base = new Base('val1','val2');
-    base.function1(); // calling function1
-    base.function2(); // calling function2
+const base = new Base('val1', 'val2');
+base.function1(); // calling function1
+base.function2(); // calling function2
 ```
 
 ### Inheritance in Classes
@@ -73,7 +74,7 @@
     }
 ```
 
-### Inheritance using prototype 
+### Inheritance using prototype
 
 ```javascript
     function Inherited(arg1,arg2) {
@@ -112,13 +113,15 @@
 ### Calling Objects of the classes
 
 ```javascript
-    const inherited = new Base('val1','val2');
-    const base = new Inherited('val1','val2','val3');
-    inherited.function1(); // calling function1
-    inherited.function2(); // calling function2
-    base.function3(); //calling function3 using base
+const inherited = new Base('val1', 'val2');
+const base = new Inherited('val1', 'val2', 'val3');
+inherited.function1(); // calling function1
+inherited.function2(); // calling function2
+base.function3(); //calling function3 using base
 ```
+
 ### Method Chaining
+
 ```javascript
     class Base {
         constructor(arg1,arg2) {
@@ -141,3 +144,41 @@
     base.function1().function2(); //will not work if 'this' is not returned by both function1 and function2 of the class Base
 ```
 
+### classes full example with inheritence
+
+```javascript
+class Inherited {
+  constructor(i1, i2) {
+    this.i1 = i1;
+    this.i2 = i2;
+  }
+
+  sum() {
+    console.log(this.i1 + this.i2);
+    return this;
+  }
+
+  product() {
+    console.log(this.i1 * this.i2);
+    return this;
+  }
+}
+
+class Base extends Inherited {
+  constructor(b1, b2, b3) {
+    super(b1, b2);
+    this.b1 = b1;
+    this.b2 = b2;
+    this.b3 = b3;
+  }
+
+  sum_base() {
+    return this.b1 + this.b2 + this.b3;
+  }
+}
+
+const b = new Base(1, 2, 3);
+// b.sum_base();
+b.sum();
+b.product().sum();
+```
